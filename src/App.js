@@ -11,10 +11,12 @@ function App() {
   
   const handleSearch = async() => {
     if(input === ''){
-      alert("Digite um cep válido");
+      alert("Digite um cep");
     }else{
       const cepRes = await fetchPostalCode(input);
-      setCep(cepRes);
+      if(cepRes){
+        setCep(cepRes);
+      }
     }
   }
         
